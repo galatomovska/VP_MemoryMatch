@@ -67,12 +67,12 @@ namespace MemoryGame
                     RoundLost();
                     
                 }
-                if (time >= 60)
-                {
-                    labelTime.Text = "01:" + (time - 60).ToString();
-                }
-                else if(time >= 60 && (time - 60) < 10)
+                if (time >= 60 && (time - 60) < 10)
+                { 
                     labelTime.Text = "01:0" + (time - 60).ToString();
+                }
+                else if(time >= 70)
+                    labelTime.Text = "01:" + (time - 60).ToString();
                 else
                 {
                     if (time < 10)
