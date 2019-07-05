@@ -63,27 +63,25 @@ namespace MemoryGame
                 time--;
                 if (time < 0)
                 {
-                    //timer.Stop();
                     RoundLost();
-                    
                 }
-                if (time >= 60 && (time - 60) < 10)
-                { 
+                else if (time >= 60 && (time - 60) < 10)
+                {
                     labelTime.Text = "01:0" + (time - 60).ToString();
                 }
-                else if(time >= 70)
+                else if (time >= 70)
+                {
                     labelTime.Text = "01:" + (time - 60).ToString();
+                }
+                else if (time < 10)
+                {
+                    labelTime.Text = "00:0" + time.ToString();
+                    labelNoTime.Visible = true;
+                }
                 else
                 {
-                    if (time < 10)
-                    {
-                        labelTime.Text = "00:0" + time.ToString();
-                        labelNoTime.Visible = true;
-                    }
-                    else
-                        labelTime.Text = "00:" + time.ToString();
+                    labelTime.Text = "00:" + time.ToString();
                 }
-
                 labelMoves.Text = moves.ToString();
             };
         }
