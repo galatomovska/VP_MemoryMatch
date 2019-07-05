@@ -65,7 +65,7 @@ namespace MemoryGame
                 {
                     RoundLost();
                 }
-                var ssTime = TimeSpan.FromSeconds(time);
+                
                 if (time < 10)
                 {
                     labelTime.Text = "00:0" + time.ToString();
@@ -118,7 +118,8 @@ namespace MemoryGame
 
         private void playSound()
         {
-            SoundPlayer simpleSound = new SoundPlayer(@"D:\gala\VP\wetransfer-e7c506\MemoryGame - new\MemoryGame\Resources\flip.wav");
+        // put flip.wav's file path to play sound
+            SoundPlayer simpleSound = new SoundPlayer(@"Resources\flip.wav");
             simpleSound.Play();
         }
         private void ResetImages()
